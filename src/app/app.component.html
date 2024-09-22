@@ -225,8 +225,40 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+      <h1>Hello, {{titleName}}. {{ name }} {{ lastName }}</h1>
+      <p>Welcome! your info is 🎉</p>
+      <div class="info-container" *ngFor="let user of users">
+        <table class="info-table">
+          <tr class="info-row">
+            <th class="info-cell">Gender:</th>
+            <td class="info-cell">{{ user.gender }}</td>
+          </tr>
+          <tr class="info-row">
+            <th class="info-cell">Email:</th>
+            <td class="info-cell">{{ user.email }}</td>
+          </tr>
+          <tr class="info-row">
+            <th class="info-cell">Phone:</th>
+            <td class="info-cell">{{ user.phone }}</td>
+          </tr>
+          <tr class="info-row">
+            <th class="info-cell">Cell:</th>
+            <td class="info-cell">{{ user.cell }}</td>
+          </tr>
+          <tr class="info-row">
+            <th class="info-cell">Age:</th>
+            <td class="info-cell">{{ user.age }} years old</td>
+          </tr>
+          <tr class="info-row">
+            <th class="info-cell">Birthday:</th>
+            <td class="info-cell">{{ user.birthday }}</td>
+          </tr>
+          <tr class="info-row">
+            <th class="info-cell">Picture:</th>
+            <td class="info-cell"><img [src]="user.picture" alt="profile picture" /></td>
+          </tr>
+        </table>
+      </div>      
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
